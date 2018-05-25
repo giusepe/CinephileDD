@@ -53,67 +53,69 @@ namespace CinephileDD.ViewModels
             movieService = new MovieService();
 
             LoadMovies = ReactiveCommand.Create<int, Unit>(offset =>
-            {
-                movieService.LoadUpcomingMovies(offset);
-                return Unit.Default;
-            }, outputScheduler: this.mainThreadScheduler);
+                movieService.LoadUpcomingMovies(offset),
+				outputScheduler: this.mainThreadScheduler);
 
-            this.WhenActivated((CompositeDisposable disposables) =>
-            {
-                SelectedItem = null;
+			this.WhenActivated((CompositeDisposable disposables) =>
+			{
+				SelectedItem = null;
 
-                movieService
-                    .UpcomingMovies
-                    .Connect()
-                    .DisposeMany()
-                    .ObserveOn(this.mainThreadScheduler)
-                    .Do(movie => Debug.WriteLine($"Adding Movie Items"))
-                    .Cast(movie => new UpcomingMoviesCellViewModel(movie))
-                    .Bind(out m_movies)
-                    .Subscribe()
-                    .DisposeWith(disposables);
+				movieService
+					.UpcomingMovies
+					.Connect()
+					.DisposeMany()
+					.ObserveOn(this.mainThreadScheduler)
+					.Do(movie => Debug.WriteLine($"Adding Movie Items"))
+					.Cast(movie => new UpcomingMoviesCellViewModel(movie))
+					.Bind(out m_movies)
+					.Subscribe()
+					.DisposeWith(disposables);
 
-                LoadMovies
-                    .Subscribe()
-                    .DisposeWith(disposables);
+				LoadMovies
+					.Subscribe()
+					.DisposeWith(disposables);
 
-                this
-                    .WhenAnyValue(x => x.SelectedItem)
-                    .Where(x => x != null)
-                    .Subscribe(x => LoadSelectedPage(x))
-                    .DisposeWith(disposables);
+				this
+					.WhenAnyValue(x => x.SelectedItem)
+					.Where(x => x != null)
+					.Subscribe(x => LoadSelectedPage(x))
+					.DisposeWith(disposables);
 
-                LoadMovies
-                    .ThrownExceptions
-                    .Subscribe((obj) =>
-                    {
-                        Debug.WriteLine(obj.Message);
-                    });
+				LoadMovies
+					.ThrownExceptions
+					.Subscribe((obj) =>
+					{
+						Debug.WriteLine(obj.Message);
+					});
 
-                m_isRefreshing =
-                   LoadMovies
-                       .IsExecuting
-                       .Select(x => x)
-                       .ToProperty(this, x => x.IsRefreshing, true)
-                       .DisposeWith(disposables);
+				m_isRefreshing =
+				   LoadMovies
+					   .IsExecuting
+					   .Select(x => x)
+					   .ToProperty(this, x => x.IsRefreshing, true)
+					   .DisposeWith(disposables);
 
-
-                this.WhenAnyValue(x => x.ItemAppearing)
-                    .Select(item =>
-                    {
-                        if (item == null)
-                            return -1; //causes initial load
-
-                        return Movies.IndexOf(item);
-                    })
-                    .Do(index => Debug.WriteLine($"==> index {index} >= {Movies.Count - 5} = {index >= Movies.Count - 5}"))
-                    .Where(index => index >= Movies.Count - 5)
-                    .InvokeCommand(LoadMovies)
-                    .DisposeWith(disposables);            
-            });
+				WhenNeedToLoadMore()
+    				.InvokeCommand(LoadMovies)
+    				.DisposeWith(disposables);
+			});
         }
 
-        void LoadSelectedPage(UpcomingMoviesCellViewModel viewModel)
+		private IObservable<int> WhenNeedToLoadMore()
+		{
+			return this.WhenAnyValue(x => x.ItemAppearing)  
+    			.Select(item =>
+    			{
+    				if (item == null)
+    					return -1; //causes initial load
+
+    				return Movies.IndexOf(item);
+    			})
+    			.Do(index => Debug.WriteLine($"==> index {index} >= {Movies.Count - 5} = {index >= Movies.Count - 5}"))
+    			.Where(index => index >= Movies.Count - 5);
+		}
+
+		void LoadSelectedPage(UpcomingMoviesCellViewModel viewModel)
         {
             HostScreen
                 .Router

@@ -29,7 +29,7 @@ namespace CinephileDD.Core.Model
 			internalSourceCache = new SourceCache<Movie, int>(o => o.Id);
         }
 
-        public IObservable<Unit> LoadUpcomingMovies(int index)
+        public Unit LoadUpcomingMovies(int index)
         {
     		movieCache
                 .GetAndFetchLatest($"upcoming_movies_{index}", () => FetchUpcomingMovies(index))
@@ -37,7 +37,7 @@ namespace CinephileDD.Core.Model
                 .Do(x => System.Diagnostics.Debug.WriteLine($"========> Movie {x.Id} - {x.Title}"))
     			.Subscribe(x => internalSourceCache.AddOrUpdate(x));         
 
-			return Observable.Return(Unit.Default);
+			return Unit.Default;
         }
 
 

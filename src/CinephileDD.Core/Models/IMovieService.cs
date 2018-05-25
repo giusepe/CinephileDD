@@ -11,6 +11,6 @@ namespace CinephileDD.Core.Model
 {
     public interface IMovieService
     {
-		IObservable<Unit> LoadUpcomingMovies(int index);
+		Unit LoadUpcomingMovies(int index);
     }
 }

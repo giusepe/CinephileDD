@@ -20,12 +20,12 @@ namespace CinephileDD.Core.Models
                 Title = movieDto.Title,
                 PosterSmall = string
 					.Concat(BaseUrl,
-                                       SmallPosterSize,
-                                       movieDto.PosterPath),
+                        SmallPosterSize,
+                        movieDto.PosterPath),
                 PosterBig = string
-                                .Concat(BaseUrl,
-                                       BigPosterSize,
-                                       movieDto.PosterPath),
+                    .Concat(BaseUrl,
+                        BigPosterSize,
+                        movieDto.PosterPath),
                 Genres = genres.Genres.Where(g => movieDto.GenreIds.Contains(g.Id)).Select(j => j.Name).ToList(),
 				ReleaseDate = DateTime.Parse(movieDto.ReleaseDate, new CultureInfo(language)),
                 Overview = movieDto.Overview
