@@ -1,9 +1,5 @@
-﻿// Licensed to the .NET Foundation under one or more agreements.
-// The .NET Foundation licenses this file to you under the MS-PL license.
-// See the LICENSE file in the project root for more information.
-
-using System;
-using System.Collections.Generic;
+﻿using System;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Reactive;
@@ -11,13 +7,12 @@ using System.Reactive.Concurrency;
 using System.Reactive.Disposables;
 using System.Reactive.Linq;
 using CinephileDD.Core.Model;
-using ReactiveUI;
-using System.Collections.ObjectModel;
 using DynamicData;
+using ReactiveUI;
 
 namespace CinephileDD.ViewModels
 {
-    public class UpcomingMoviesListViewModel : ViewModelBase
+	public class UpcomingMoviesListViewModel : ViewModelBase
     {
         ReadOnlyObservableCollection<UpcomingMoviesCellViewModel> m_movies;
         public ReadOnlyObservableCollection<UpcomingMoviesCellViewModel> Movies => m_movies;
@@ -114,8 +109,7 @@ namespace CinephileDD.ViewModels
                     .Do(index => Debug.WriteLine($"==> index {index} >= {Movies.Count - 5} = {index >= Movies.Count - 5}"))
                     .Where(index => index >= Movies.Count - 5)
                     .InvokeCommand(LoadMovies)
-                    .DisposeWith(disposables);
-
+                    .DisposeWith(disposables);            
             });
         }
 
