@@ -10,12 +10,12 @@ using System.Reactive;
 using System.Reactive.Concurrency;
 using System.Reactive.Disposables;
 using System.Reactive.Linq;
-using Cinephile.Core.Model;
+using CinephileDD.Core.Model;
 using ReactiveUI;
 using System.Collections.ObjectModel;
 using DynamicData;
 
-namespace Cinephile.ViewModels
+namespace CinephileDD.ViewModels
 {
     public class UpcomingMoviesListViewModel : ViewModelBase
     {

@@ -5,7 +5,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Cinephile.Core.Rest.Dtos.Movies
+namespace CinephileDD.Core.Rest.Dtos.Movies
 {
     public class GenresDto
     {

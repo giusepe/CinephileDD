@@ -3,7 +3,7 @@
 // See the LICENSE file in the project root for more information.
 
 using System;
-namespace Cinephile.Core.Rest.Dtos.Movies
+namespace CinephileDD.Core.Rest.Dtos.Movies
 {
     public class GenreDto
     {

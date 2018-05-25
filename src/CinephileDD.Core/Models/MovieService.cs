@@ -1,14 +1,14 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Reactive.Linq;
-using Cinephile.Core.Rest;
-using Cinephile.Core.Rest.Dtos.Movies;
+using CinephileDD.Core.Rest;
+using CinephileDD.Core.Rest.Dtos.Movies;
 using DynamicData;
 using Splat;
 
-namespace Cinephile.Core.Model
+namespace CinephileDD.Core.Model
 {
     public class MovieService : IMovieService
     {

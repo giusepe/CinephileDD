@@ -11,7 +11,7 @@ using System.Net.Http.Headers;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Cinephile.Core.Infrastructure.HttpTools
+namespace CinephileDD.Core.Infrastructure.HttpTools
 {
 public class HttpLoggingHandler : DelegatingHandler
 {

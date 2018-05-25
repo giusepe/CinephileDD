@@ -19,7 +19,7 @@ namespace CinephileDD.Droid
             global::Xamarin.Forms.Forms.Init(this, bundle);
 
 			BlobCache.ApplicationName = "Cinephile";
-            CachedImageRenderer.Init();
+            CachedImageRenderer.Init(true);
 
             LoadApplication(new App());
         }

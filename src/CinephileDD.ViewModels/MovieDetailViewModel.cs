@@ -3,10 +3,10 @@
 // See the LICENSE file in the project root for more information.
 
 using System;
-using Cinephile.Core.Model;
+using CinephileDD.Core.Model;
 using ReactiveUI;
 
-namespace Cinephile.ViewModels
+namespace CinephileDD.ViewModels
 {
     public class MovieDetailViewModel : ViewModelBase
     {

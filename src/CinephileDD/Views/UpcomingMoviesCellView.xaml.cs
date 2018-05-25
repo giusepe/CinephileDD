@@ -5,12 +5,12 @@
 using System;
 using System.Collections.Generic;
 using System.Reactive.Disposables;
-using Cinephile.ViewModels;
+using CinephileDD.ViewModels;
 using ReactiveUI;
 using ReactiveUI.XamForms;
 using Xamarin.Forms;
 
-namespace Cinephile.Views
+namespace CinephileDD.Views
 {
     public partial class UpcomingMoviesCellView : ReactiveViewCell<UpcomingMoviesCellViewModel>
     {

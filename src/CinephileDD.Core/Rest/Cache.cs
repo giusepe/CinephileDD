@@ -7,7 +7,7 @@ using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using Akavache;
 
-namespace Cinephile.Core.Rest
+namespace CinephileDD.Core.Rest
 {
     /// <summary>
     /// Cache.

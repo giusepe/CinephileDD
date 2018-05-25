@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CinephileDD.ViewModels", "C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CinephileDD.Core", "CinephileDD.Core\CinephileDD.Core.csproj", "{758B3640-575E-46B3-814F-7D8308B31944}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Targets", "Targets", "{5005BE5D-3007-4419-8DC0-04AD70A6E721}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -103,5 +105,9 @@ Global
 		{758B3640-575E-46B3-814F-7D8308B31944}.Ad-Hoc|iPhone.Build.0 = Release|Any CPU
 		{758B3640-575E-46B3-814F-7D8308B31944}.AppStore|iPhone.ActiveCfg = Release|Any CPU
 		{758B3640-575E-46B3-814F-7D8308B31944}.AppStore|iPhone.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B9ACDD15-1820-4C48-BDA8-A681F73B534B} = {5005BE5D-3007-4419-8DC0-04AD70A6E721}
+		{6E8436CB-9D6E-485E-9587-71C9655CEEB9} = {5005BE5D-3007-4419-8DC0-04AD70A6E721}
 	EndGlobalSection
 EndGlobal

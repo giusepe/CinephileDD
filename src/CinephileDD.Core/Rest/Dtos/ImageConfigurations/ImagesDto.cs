@@ -5,7 +5,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Cinephile.Core.Rest.Dtos.ImageConfigurations
+namespace CinephileDD.Core.Rest.Dtos.ImageConfigurations
 {
     public class ImagesDto
     {

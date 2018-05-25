@@ -3,11 +3,11 @@
 // See the LICENSE file in the project root for more information.
 
 using System;
-using Cinephile.Core.Rest.Dtos.ImageConfigurations;
-using Cinephile.Core.Rest.Dtos.Movies;
+using CinephileDD.Core.Rest.Dtos.ImageConfigurations;
+using CinephileDD.Core.Rest.Dtos.Movies;
 using Refit;
 
-namespace Cinephile.Core.Rest
+namespace CinephileDD.Core.Rest
 {
     [Headers("Content-Type: application/json")]
     public interface IRestApiClient

@@ -5,7 +5,7 @@
 using System;
 using DynamicData;
 
-namespace Cinephile.Core.Model
+namespace CinephileDD.Core.Model
 {
     public interface IMovieService
     {

@@ -3,9 +3,9 @@
 // See the LICENSE file in the project root for more information.
 
 using System;
-using Cinephile.Core.Rest;
-using Cinephile.ViewModels;
-using Cinephile.Views;
+using CinephileDD.Core.Rest;
+using CinephileDD.ViewModels;
+using CinephileDD.Views;
 using ReactiveUI;
 using ReactiveUI.XamForms;
 using Splat;

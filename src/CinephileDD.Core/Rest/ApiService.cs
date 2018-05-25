@@ -6,9 +6,9 @@ using System;
 using System.Net.Http;
 using Refit;
 using Fusillade;
-using Cinephile.Core.Infrastructure.HttpTools;
+using CinephileDD.Core.Infrastructure.HttpTools;
 
-namespace Cinephile.Core.Rest
+namespace CinephileDD.Core.Rest
 {
     public class ApiService : IApiService
     {

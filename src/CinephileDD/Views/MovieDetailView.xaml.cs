@@ -3,10 +3,10 @@
 // See the LICENSE file in the project root for more information.
 
 using System.Reactive.Disposables;
-using Cinephile.ViewModels;
+using CinephileDD.ViewModels;
 using ReactiveUI;
 
-namespace Cinephile.Views
+namespace CinephileDD.Views
 {
     public partial class MovieDetailView : ContentPageBase<MovieDetailViewModel>
     {

@@ -7,7 +7,7 @@ using System.Reactive.Disposables;
 using ReactiveUI;
 using Splat;
 
-namespace Cinephile.ViewModels
+namespace CinephileDD.ViewModels
 {
     public class ViewModelBase : ReactiveObject, IRoutableViewModel, ISupportsActivation
     {

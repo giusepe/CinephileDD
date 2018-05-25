@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<ui:ContentPageBase x:Class="Cinephile.Views.MovieDetailView"
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ui:ContentPageBase x:Class="CinephileDD.Views.MovieDetailView"
                     xmlns="http://xamarin.com/schemas/2014/forms"
                     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                     xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
                     xmlns:rxui="clr-namespace:ReactiveUI.XamForms;assembly=ReactiveUI.XamForms"
-                    xmlns:ui="clr-namespace:Cinephile.Views"
-                    xmlns:vms="clr-namespace:Cinephile.ViewModels"
+                    xmlns:ui="clr-namespace:CinephileDD.Views"
+                    xmlns:vms="clr-namespace:CinephileDD.ViewModels"
                     x:TypeArguments="vms:MovieDetailViewModel">
     <ScrollView>
         <StackLayout>

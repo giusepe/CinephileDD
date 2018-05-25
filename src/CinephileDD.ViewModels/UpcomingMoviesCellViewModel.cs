@@ -4,10 +4,10 @@
 
 using System;
 using System.Linq;
-using Cinephile.Core.Model;
+using CinephileDD.Core.Model;
 using ReactiveUI;
 
-namespace Cinephile.ViewModels
+namespace CinephileDD.ViewModels
 {
     public class UpcomingMoviesCellViewModel : ViewModelBase
     {

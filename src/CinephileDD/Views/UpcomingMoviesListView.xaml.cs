@@ -6,12 +6,12 @@ using System.Diagnostics;
 using System.Reactive;
 using System.Reactive.Disposables;
 using System.Reactive.Linq;
-using Cinephile.Core.Model; 
-using Cinephile.ViewModels;
+using CinephileDD.Core.Model; 
+using CinephileDD.ViewModels;
 using ReactiveUI;
 using Xamarin.Forms;
 
-namespace Cinephile.Views
+namespace CinephileDD.Views
 {
     public partial class UpcomingMoviesListView : ContentPageBase<UpcomingMoviesListViewModel>
     {

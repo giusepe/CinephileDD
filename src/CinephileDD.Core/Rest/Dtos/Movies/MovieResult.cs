@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace Cinephile.Core.Rest.Dtos.Movies
+namespace CinephileDD.Core.Rest.Dtos.Movies
 {
     public class MovieResult
     {
